@@ -1,0 +1,95 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <main>
+      <div id="main-one">
+          <h2>User Profile</h2>
+      </div><hr>
+
+      {% for item in all %}
+      <div id="main-two">
+          <label for="">First Name: </label>
+          <span>{{ item.First_Name }}</span>
+      </div><hr>
+
+      <div id="main-two">
+        <label for="">First Name: </label>
+        <span>{{ item.First_Name }}</span>
+    </div><hr>
+
+      <div id="main-three">
+          <label for="">Last Name: </label>
+          <span>{{ item.Last_Name }}</span>
+      </div><hr>
+
+      <div id="main-four">
+          <label for="">Username: </label>
+          <span>{{ item.Username }}</span>
+      </div><hr>
+
+      <div id="main-four">
+          <label for="">Email: </label>
+          <span>{{ item.Email }}</span>
+      </div><hr>
+
+      <div id="main-five">
+          <label for="">Location: </label>
+          <span>{{ item.location}}</span>
+      </div><hr>
+
+      <div id="main-six">
+        <label for="">Birth_day: </label>
+        <span>{{ item.birth_date}}</span>
+      </div><hr>
+      {% endfor %}
+  </main>
+
+  
+<style>
+    
+    /* Media query for Samsung Galaxy S9+ */
+    /* CSS styles specific to Samsung Galaxy S9+ */
+    @media only screen and (max-width: 658px) and (min-width: 320px) {
+    }
+    
+    /* Media query for Samsung Galaxy S8 */
+    /* CSS styles specific to Samsung Galaxy S8 */
+    @media only screen and (max-width: 740px) and (min-width: 360px) {
+    }
+    
+    /* Media query for Samsung Galaxy tab */
+    /* CSS styles specific to Samsung Galaxy tab */
+    @media only screen and (max-width: 1138px) and (min-width: 712px) {
+    }
+    
+    /* Media query for Samsung Galaxy s20 ultra */
+    /* CSS styles specific to Samsung Galaxy s20 ultra */
+    @media only screen and (max-width: 915px) and (min-width: 412px) {
+    }
+    
+    /* Media query for iPhone 6/7/8 */
+    /* CSS styles specific to iPhone 6/7/8 */
+    @media only screen and (max-width: 667px) and (min-width: 414px) {
+    }
+    
+    /* Media query for ALL laptops */
+    /* CSS styles specific All laptops */
+    @media only screen and (max-width: 1920px) and (min-width: 1366px){
+    }
+    
+    /* Media query for HP CORE I5 6/7/8 */
+    /* CSS styles specific to HP CORE I5 6/7/8 */
+    @media only screen and (max-width: 1600px) and (min-width: 900px){
+    } 
+    
+    /* Media query for samsung galaxy ao3s and a10 */
+    /* CSS styles specific to samsung galaxy ao3s and a10 */
+    @media only screen and (max-width: 720px) and (min-width: 320px) {
+    }
+    
+    </style>
+    
+{% endblock %}

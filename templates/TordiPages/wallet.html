@@ -1,0 +1,279 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <main>
+
+  <style>
+main{
+  background-color: #c6c6c6f6;
+}
+#main-one{
+  font-weight: bolder;
+}
+#main-two{
+  text-align: center;
+  font-weight: bolder;
+}
+#main-three{
+  text-align: center;
+  background-color: #ccc;
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  
+}
+.crypto{
+  display: flex;
+  justify-content: space-between;
+}
+.crypto p{
+  padding: 10px 50px 0 0;
+  padding: 0;
+  margin: 0;
+}
+.crypto h3{
+  padding: 10px 50px 0 50px;
+}
+
+
+  /* Media query for Samsung Galaxy S9+ */
+  /* CSS styles specific to Samsung Galaxy S9+ */
+  @media only screen and (max-width: 658px) and (min-width: 320px) {
+  }
+  
+  /* Media query for Samsung Galaxy S8 */
+  /* CSS styles specific to Samsung Galaxy S8 */
+  @media only screen and (max-width: 740px) and (min-width: 360px) {
+  }
+  
+  /* Media query for Samsung Galaxy tab */
+  /* CSS styles specific to Samsung Galaxy tab */
+  @media only screen and (max-width: 1138px) and (min-width: 712px) {
+    #main-three{
+      padding: 10px 5px 10px 5px;
+      color: #000;
+    }
+    .crypto {
+      background-color: #ccc;
+      padding: 10px;
+    }
+    .crypto h3 {
+      padding-left: 10px;
+      font-size: 30px;
+    }
+    .balance {
+      padding-top: 20px;
+      font-size: 25px;
+    }
+  }
+  
+  /* Media query for Samsung Galaxy s20 ultra */
+  /* CSS styles specific to Samsung Galaxy s20 ultra */
+  @media only screen and (max-width: 915px) and (min-width: 412px) {
+    #main-three{
+      padding: 10px 5px 10px 5px;
+      color: #000;
+    }
+    .crypto {
+      background-color: #ccc;
+      padding: 10px;
+    }
+    .crypto h3 {
+      padding-left: 10px;
+      font-size: 18px;
+    }
+    .balance {
+      padding-top: 20px;
+      font-size: 18px;
+    }
+  }
+  
+  /* Media query for iPhone 6/7/8 */
+  /* CSS styles specific to iPhone 6/7/8 */
+  @media only screen and (max-width: 736px) and (min-width: 414px) {
+    #main-three{
+      padding: 10px 5px 10px 5px;
+      color: #000;
+    }
+    .crypto {
+      background-color: #ccc;
+      padding: 10px;
+    }
+    .crypto h3 {
+      padding-left: 10px;
+      font-size: 25px;
+    }
+    .balance {
+      padding-top: 20px;
+      font-size: 18px;
+    }
+  }
+  
+  /* Media query for ALL laptops */
+  /* CSS styles specific All laptops */
+  @media only screen and (max-width: 1920px) and (min-width: 1366px){
+  }
+  
+  /* Media query for HP CORE I5  */
+  /* CSS styles specific to HP CORE I5*/
+  @media only screen and (max-width: 1600px) and (min-width: 900px){
+    #main-three{
+      padding: 10px 5px 10px 5px;
+      color: #000;
+    }
+    .crypto {
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .crypto h3 {
+      padding-left: 10px;
+      font-size: 30px;
+    }
+    .balance {
+      padding-top: 20px;
+      font-size: 25px;
+    }
+  } 
+  
+  /* Media query for samsung galaxy ao3s and a10 */
+  /* CSS styles specific to samsung galaxy ao3s and a10 */
+  @media only screen and (max-width: 720px) and (min-width: 320px) {
+    #main-three{
+      padding: 10px 5px 10px 5px;
+      color: #000;
+    }
+    .crypto {
+      background-color: #ccc;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .crypto h3 {
+      padding-left: 10px;
+      font-size: 15px;
+    }
+    .balance {
+      padding-top: 15px;
+      font-size: 15px;
+    }
+    #main-two h2 {
+      font-size: 20px;
+    }
+    #main-three h3 {
+      font-size: 20px;
+    }
+  }
+
+
+</style>
+
+  <div id="main-two">
+    <h2>DASHBOARD</h2>
+  </div>
+
+  <div id="main-three">
+    <h3> $238,675.98 </h3>
+  </div>
+
+  {% for item in wallet %}
+  <div id="main-four">
+    <h3>Crypto</h3><hr>
+    <div id="main-four-bitcoin" class="crypto">
+      <h3>Bitcoin</h3>
+      <div id="main-four-balance" class="balance">
+        <p>{{ item.Bicoin }}BTC</p>
+      </div>
+
+    </div><hr>
+
+    <div id="main-four-ethereium" class="crypto">
+      <h3>Ethereium</h3>
+      <div id="main-four-balance" class="balance">
+        <p>{{ item.Bicoin }}ETH</p>
+      </div>
+      
+    </div><hr>
+
+    <div id="main-four-usdt" class="crypto">
+      <h3>USDT</h3>
+      <div id="main-four-balance" class="balance">
+        <p>{{ item.Bicoin }}USDT</p>
+      </div>
+    </div><hr>
+
+    <div id="main-four-doge" class="crypto">
+      <h3>Doge</h3>
+      <div id="main-four-balance" class="balance">
+        <p>{{ item.Bicoin }}DOGE</p>
+      </div>
+    </div><hr>
+
+    <div id="main-four-tron" class="crypto">
+      <h3>Tron</h3>
+      <div id="main-four-balance" class="balance">
+        <p>{{ item.Bicoin }}TRX</p>
+      </div>
+    </div><hr>
+
+    <div id="main-four-bnb" class="crypto">
+      <h3>BNB</h3>
+      <div id="main-four-balance" class="balance">
+        <p>{{ item.Bicoin }}BNB</p>
+    </div>
+  </div>
+
+  {% endfor %}
+
+  </main>
+
+  
+<style>
+    
+  /* Media query for Samsung Galaxy S9+ */
+  /* CSS styles specific to Samsung Galaxy S9+ */
+  @media only screen and (max-width: 658px) and (min-width: 320px) {
+  }
+  
+  /* Media query for Samsung Galaxy S8 */
+  /* CSS styles specific to Samsung Galaxy S8 */
+  @media only screen and (max-width: 740px) and (min-width: 360px) {
+  }
+  
+  /* Media query for Samsung Galaxy tab */
+  /* CSS styles specific to Samsung Galaxy tab */
+  @media only screen and (max-width: 1138px) and (min-width: 712px) {
+  }
+  
+  /* Media query for Samsung Galaxy s20 ultra */
+  /* CSS styles specific to Samsung Galaxy s20 ultra */
+  @media only screen and (max-width: 915px) and (min-width: 412px) {
+  }
+  
+  /* Media query for iPhone 6/7/8 */
+  /* CSS styles specific to iPhone 6/7/8 */
+  @media only screen and (max-width: 667px) and (min-width: 414px) {
+  }
+  
+  /* Media query for ALL laptops */
+  /* CSS styles specific All laptops */
+  @media only screen and (max-width: 1920px) and (min-width: 1366px){
+  }
+  
+  /* Media query for HP CORE I5 6/7/8 */
+  /* CSS styles specific to HP CORE I5 6/7/8 */
+  @media only screen and (max-width: 1600px) and (min-width: 900px){
+  } 
+  
+  /* Media query for samsung galaxy ao3s and a10 */
+  /* CSS styles specific to samsung galaxy ao3s and a10 */
+  @media only screen and (max-width: 720px) and (min-width: 320px) {
+  }
+  
+  </style>
+
+{% endblock %}
+
+ 

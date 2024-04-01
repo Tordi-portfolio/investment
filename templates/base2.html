@@ -1,0 +1,208 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Cryptop</title>
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="TordiApp/index.html">
+            <span>
+              TradXX
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  {% if user.is_authenticated %}
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="about"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="how"> How </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="wallet">
+                    <span>Wallet</span> <img src="{% static 'images/wallet.png' %}" alt="" />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="invest">Invest</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="logout"> Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="accounts/profile/login"> Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="accounts/profile/register"> Sign Up</a>
+                </li>
+                {% endif %}
+              </ul>
+              <div class="user_option">
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div id="authenticate_user_name">
+        {% if user.is_authenticated %}
+          <h2 style="font-weight: bolder;">{{user.username}}</h2><br>
+        {% else %}
+          <h2>Welcome to TraXX investment platform</h2><br>
+        {% endif %}
+      </div>
+    </header>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2019 All Rights Reserved By
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script 
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+</body>
+
+  
+<style>
+  #authenticate_user_name h2 {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 0;
+  }
+    
+  /* Media query for Samsung Galaxy S9+ */
+  /* CSS styles specific to Samsung Galaxy S9+ */
+  @media only screen and (max-width: 658px) and (min-width: 320px) {
+  }
+  
+  /* Media query for Samsung Galaxy S8 */
+  /* CSS styles specific to Samsung Galaxy S8 */
+  @media only screen and (max-width: 740px) and (min-width: 360px) {
+  }
+  
+  /* Media query for Samsung Galaxy tab */
+  /* CSS styles specific to Samsung Galaxy tab */
+  @media only screen and (max-width: 1138px) and (min-width: 712px) {
+  }
+  
+  /* Media query for Samsung Galaxy s20 ultra */
+  /* CSS styles specific to Samsung Galaxy s20 ultra */
+  @media only screen and (max-width: 915px) and (min-width: 412px) {
+  }
+  
+  /* Media query for iPhone 6/7/8 */
+  /* CSS styles specific to iPhone 6/7/8 */
+  @media only screen and (max-width: 667px) and (min-width: 414px) {
+  }
+  
+  /* Media query for ALL laptops */
+  /* CSS styles specific All laptops */
+  @media only screen and (max-width: 1920px) and (min-width: 1366px){
+  }
+  
+  /* Media query for HP CORE I5 6/7/8 */
+  /* CSS styles specific to HP CORE I5 6/7/8 */
+  @media only screen and (max-width: 1600px) and (min-width: 900px){
+  } 
+  
+  /* Media query for samsung galaxy ao3s and a10 */
+  /* CSS styles specific to samsung galaxy ao3s and a10 */
+  @media only screen and (max-width: 720px) and (min-width: 320px) {
+    #authenticate_user_name h2 {
+      padding: 20px;
+      background-color: black;
+      color: white;
+      font-size: 15px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+  
+  </style>
+
+</html>
